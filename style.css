@@ -1,8 +1,19 @@
+html{
+    box-sizing: border-box;
+}
+
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
 body{
     margin: 0;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
     --link-color: rgba(255, 255, 255, 0.534);
+    --form-control-width: 250px;
 }
+
 .page-layout{
     display: flex;
 }
@@ -24,6 +35,8 @@ body{
 }
 
 .banner{
+    z-index: 2;
+
     position: absolute;
     top: 66%;
     width: 100%;
@@ -77,6 +90,7 @@ form fieldset{
     background-color: white;
     padding: 100px;
     padding-bottom: 64px;
+    border: none;
     box-shadow: 4px 0px 16px 0 rgba(0, 0, 0, 0.347);
 }
 
@@ -105,8 +119,44 @@ fieldset legend{
 
 form label{
     display: block;
+    margin-bottom: 4px;
     width: 100%;
     font-size: .7rem;
     font-weight: bold;
     color: rgb(91, 112, 114);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="tel"]{
+    font-size: 1.1rem;
+    width: var(--form-control-width);
+    padding: 6px;
+    border-radius: 4px;
+    border: 2px solid rgba(75, 148, 169, 0.132);
+    background-color: #fcfcfc;
+    color: rgb(41, 41, 41);
+}
+
+form button{
+    margin-top: 50px;
+    width: var(--form-control-width);
+    height: 50px;
+    background: linear-gradient(45deg, #0583a1, #17a9d1);
+    color: white;
+    font-size: 1.1rem;
+    border: 2px solid #17a9d1;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.257);
+    transition: all .16s;
+}
+
+form button:hover,
+form button:focus{
+    transition: all .16s;
+    cursor: pointer;
+    filter: brightness(1.1);
+    border: 2px solid #1cc4f3;
+    background-position: 4px 0;
 }
