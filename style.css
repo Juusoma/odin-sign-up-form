@@ -176,32 +176,45 @@ form input:focus{
     position: relative;
 }
 
-.password-info:has(+ #password-init:invalid){
+.form-information-label{
     font-size: .8rem;
+    display: block;
+    position: absolute;
     color: grey;
-    display: block;
-    position: absolute;
     top: 100%;
+    text-wrap: nowrap;
 }
 
-.password-info:has(+ #password-init:invalid)::before{
-    content: "X";
-    position: absolute;
-    translate: -2ch 0;
+#password-info:has(+ #password-init:invalid)::before{
+    content: "✘";
 }
 
-.password-info:has(+ #password-init:valid){
-    font-size: .8rem;
+#password-info:has(+ #password-init:valid){
     color: green;
-    display: block;
-    position: absolute;
-    top: 100%;
 }
 
-.password-info:has(+ #password-init:valid)::before{
+#password-info:has(+ #password-init:valid)::before{
     content: "✔";
-    position: absolute;
-    translate: -2ch 0;
+}
+
+#form-submit-container{
+    position: relative;
+}
+
+#form-validation-info{
+    
+}
+
+form:invalid #form-validation-info::before{
+    content: "✘";
+}
+
+form:valid #form-validation-info{
+    color: green;
+}
+
+form:valid #form-validation-info::before{
+    content: "✔";
 }
 
 form button{
