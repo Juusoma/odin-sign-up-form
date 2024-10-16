@@ -169,7 +169,6 @@ form input[type="tel"]{
 }
 
 form button{
-    margin-top: 50px;
     width: var(--form-control-width);
     height: 50px;
     background: linear-gradient(45deg, #0583a1, #17a9d1);
